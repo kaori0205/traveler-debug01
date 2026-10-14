@@ -23,5 +23,7 @@ Rails.application.routes.draw do
   
   # Defines the root path route ("/")
   # root "posts#index"
+  
+  # get 'top' => 'homes#top'を以下に変更
   root 'homes#top'
 end

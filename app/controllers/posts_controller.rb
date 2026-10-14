@@ -30,9 +30,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    if @post.update
-      redirect_to post_path(@post.id)
+    #インスタンス変数「＠」を削除
+    post = Post.find(params[:id])
+    if post.update(post_params) #  (post_params) を追加
+      redirect_to post_path(post.id)
     else
       render :edit, status: :unprocessable_entity
     end
